@@ -6,3 +6,4 @@ models
 *.p
 papers/
 saved_model/
+traffic-signs-data.zip
