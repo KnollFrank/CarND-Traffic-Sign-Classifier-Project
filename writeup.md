@@ -151,13 +151,13 @@ TODO:
 
 Here are the results of the prediction:
 
-|        Image         |    Prediction     |
-|:--------------------:|:-----------------:|
-| Speed limit (30km/h) |    Pedestrians    |
-|         Stop         |       Stop        |
-|     No vehicles      | End of no passing |
-|       No entry       |  Turn left ahead  |
-|  Children crossing   |     Road work     |
+Image|Prediction
+:---:|:---:
+Speed limit (30km/h)|Pedestrians
+Stop|Stop
+No vehicles|End of no passing
+No entry|Turn left ahead
+Children crossing|Road work
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
