@@ -35,9 +35,9 @@ TODO:
 
 I used the numpy library to calculate summary statistics of the traffic signs data set:
 
-* The size of training set is 34799
+* The size of the training set is 34799
 * The size of the validation set is 4410
-* The size of test set is 12630
+* The size of the test set is 12630
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
@@ -45,6 +45,8 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 
 TODO:
 - Include an exploratory visualization of the dataset.
+
+The following image originates from the test dataset having classId = 2 and shows a Speed limit (50km/h) traffic sign:
 
 ![speed limit 50 (km/h)](examples/speed_limit_50.png)
 
