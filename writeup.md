@@ -16,11 +16,6 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
 
 Here is a link to my [project code](https://github.com/KnollFrank/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
@@ -141,8 +136,11 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6]
-![alt text][image7] ![alt text][image8]
+![Speed limit (30km/h)](samples/classId_01.jpg =x200)
+![Stop](samples/classId_14.jpg =x200)
+![No vehicles](samples/classId_15.jpg =x200)
+![No entry](samples/classId_17.jpg =x200)
+![Children crossing](samples/classId_28.jpg =x200)
 
 The first image might be difficult to classify because ...
 
@@ -177,6 +175,3 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 
 For the second image ...
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
