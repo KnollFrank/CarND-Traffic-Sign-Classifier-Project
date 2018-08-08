@@ -161,19 +161,63 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### Output Top 5 Softmax Probabilities For Each Image Found on the Web
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+TODO:
+- Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+
+The code for making predictions on my final model is in the function `get_top_5_predictions()` located in the Ipython notebook.
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					|
-|:---------------------:|:---------------------------------------------:|
-| .60         			| Stop sign   									|
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+samples/classId_01.jpg (Speed limit (30km/h)):
 
+Probability|Prediction
+:---:|:---:
+56%|Pedestrians
+29%|Road narrows on the right
+10%|Speed limit (30km/h)
+4%|Double curve
+1%|Right-of-way at the next intersection
+
+samples/classId_14.jpg (Stop):
+
+Probability|Prediction
+:---:|:---:
+100%|Stop
+0%|Turn left ahead
+0%|Keep right
+0%|No entry
+0%|Turn right ahead
+
+samples/classId_15.jpg (No vehicles):
+
+Probability|Prediction
+:---:|:---:
+99%|End of no passing
+0%|No passing
+0%|Yield
+0%|Priority road
+0%|End of no passing by vehicles over 3.5 metric tons
+
+samples/classId_17.jpg (No entry):
+
+Probability|Prediction
+:---:|:---:
+100%|Turn left ahead
+0%|Keep right
+0%|No entry
+0%|Go straight or right
+0%|Dangerous curve to the right
+
+samples/classId_28.jpg (Children crossing):
+
+Probability|Prediction
+:---:|:---:
+87%|Road work
+12%|Turn right ahead
+1%|Ahead only
+0%|Stop
+0%|Beware of ice/snow
 
 For the second image ...
