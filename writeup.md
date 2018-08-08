@@ -15,8 +15,6 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
@@ -46,10 +44,6 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 TODO:
 - Include an exploratory visualization of the dataset.
 
-The following image originates from the test dataset having classId = 2 and shows a Speed limit (50km/h) traffic sign:
-
-![speed limit 50 (km/h)](examples/speed_limit_50.jpg)
-
 Here is an exploratory visualization of the data set. It is a kernel density estimate of the traffic sign classes of the training data (y_train), the validation data (y_valid) and the test data (y_test):
 
 ![alt text](examples/kdeplot.jpg)
@@ -65,12 +59,13 @@ TODO:
 
 As a first step, I decided to convert the images to grayscale because ...
 
-Here is an example of a traffic sign image before and after grayscaling.
+Here is an example of a traffic sign image before grayscaling:
 
 ![speed limit 50 (km/h)](examples/speed_limit_50.jpg)
 
-![speed limit 50 (km/h)](examples/speed_limit_50_grayscale.jpg)
+and after grayscaling:
 
+![speed limit 50 (km/h)](examples/speed_limit_50_grayscale.jpg)
 
 As a last step, I normalized the image data because ...
 
