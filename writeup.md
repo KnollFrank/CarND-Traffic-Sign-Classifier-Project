@@ -76,17 +76,25 @@ TODO:
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					|
-|:---------------------:|:---------------------------------------------:|
-| Input         		| 32x32x3 RGB image   							|
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+|      Layer      |                 Description                 |
+|:---------------:|:-------------------------------------------:|
+|      Input      |           32x32x1 grayscale image           |
+| Convolution 5x5 | 1x1 stride, valid padding, outputs 28x28x64 |
+|      RELU       |                                             |
+| Max pooling	2x2 |        2x2 stride,  outputs 14x14x16        |
+| Convolution 5x5 | 1x1 stride, valid padding, outputs 10x10x32 |
+|      RELU       |                                             |
+| Max pooling	2x2 |         2x2 stride,  outputs 5x5x32         |
+|     Flatten     |  Input = 5x5x32. Output = 5 * 5 * 32 = 800  |
+| Fully connected |          Input = 800. Output = 120          |
+|      RELU       |                                             |
+|     Dropout     |                                             |
+| Fully connected |          Input = 120. Output = 84           |
+|      RELU       |                                             |
+|     Dropout     |                                             |
+| Fully connected |           Input = 84. Output = 10           |
+|     Softmax     |                                             |
+|     Output      |                     10                      |
 
 
 
