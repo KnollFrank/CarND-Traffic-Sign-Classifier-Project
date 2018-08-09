@@ -113,27 +113,33 @@ To train the model, I used an AdamOptimizer, a batch size of 128, number of epoc
 
 TODO:
 - Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+- vielleicht as bar chart oder radar chart darstellen (https://seaborn.pydata.org/generated/seaborn.barplot.html)
+
+model_6_16_False_no_clahe:
+Training Accuracy = 0.993
+Validation Accuracy = 0.935
+Test Accuracy = 0.910
+
+model_6_16_False:
+- Training Accuracy = 0.998
+- Validation Accuracy = 0.954
+- Test Accuracy = 0.928
+
+model_6_16_True:
+- Training Accuracy = 0.996
+- Validation Accuracy = 0.969
+- Test Accuracy = 0.946
+
+model_16_32_False:
+- Training Accuracy = 0.999
+- Validation Accuracy = 0.975
+- Test Accuracy = 0.949
 
 My final model results were:
-* training set accuracy of 0.996
-* validation set accuracy of 0.973
-* test set accuracy of 0.951
-
-mit Histogrammeinebnung normalize(cv2.equalizeHist(grayscale_image(image)).reshape((image.shape[0], image.shape[1], 1))):
-Training Accuracy = 0.998
-Validation Accuracy = 0.980
-Test Accuracy = 0.953
-
-cv2.createCLAHE(clipLimit = 2.0, tileGridSize = (8, 8)) (see https://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html):
-Training Accuracy = 0.998
-Validation Accuracy = 0.975
-Test Accuracy = 0.958
-
-cv2.createCLAHE(clipLimit = 40.0, tileGridSize = (4, 4)):
-Training Accuracy = 0.999
-Validation Accuracy = 0.983
-Test Accuracy = 0.964
-
+model_16_32_True:
+- Training Accuracy = 0.999
+- Validation Accuracy = 0.974
+- Test Accuracy = 0.961
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
