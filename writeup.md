@@ -12,11 +12,6 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image3]: ./examples/random_noise.jpg "Random Noise"
-
 Here is a link to my [project code](https://github.com/KnollFrank/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
 ### Data Set Summary & Exploration
@@ -49,22 +44,21 @@ The visualization above shows that the data sets have nearly the same distributi
 
 #### Preprocessing
 
-TODO:
-- Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
-
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, the images are converted to grayscale because color has no semantic meaning in traffic signs and it reduces the size of the data (one grey value per pixel instead of three values for red, green and blue).
 
 Here is an example of a traffic sign image before grayscaling:
 
-![speed limit 50 (km/h)](examples/turn_right_head.jpg)
+![speed limit 50 (km/h)](examples/turn_right_head.jpg =100x)
 
 and after grayscaling:
 
-![speed limit 50 (km/h)](examples/turn_right_head_grayscale.jpg)
+![speed limit 50 (km/h)](examples/turn_right_head_grayscale.jpg =100x)
 
-As a last step, I normalized the image data because ...
+Then [CLAHE](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization#Contrast_Limited_AHE) (Contrast Limited Adaptive Histogram Equalization) is applied in order to improve the contrast in the image:
 
-![speed limit 50 (km/h)](examples/turn_right_head_grayscale_CLAHE.jpg)
+![speed limit 50 (km/h)](examples/turn_right_head_grayscale_CLAHE.jpg =100x)
+
+As a last step, the image is normalized because it centers the mean at 0, which helps to avoid exploding or disappearing gradients when performing backpropagation while training the network.
 
 #### Final Model Achitecture
 
