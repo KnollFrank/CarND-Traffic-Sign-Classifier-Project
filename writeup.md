@@ -43,7 +43,7 @@ Here is an exploratory visualization of the data set. It is a kernel density est
 
 ![alt text](examples/kdeplot.jpg)
 
-The visualization above shows that the data sets are nearly identically distributed as the curves are quite similar.
+The visualization above shows that the data sets have nearly the same distribution as the curves are quite similar.
 
 ### Design and Test a Model Architecture
 
@@ -56,13 +56,15 @@ As a first step, I decided to convert the images to grayscale because ...
 
 Here is an example of a traffic sign image before grayscaling:
 
-![speed limit 50 (km/h)](examples/speed_limit_50.jpg)
+![speed limit 50 (km/h)](examples/turn_right_head.jpg)
 
 and after grayscaling:
 
-![speed limit 50 (km/h)](examples/speed_limit_50_grayscale.jpg)
+![speed limit 50 (km/h)](examples/turn_right_head_grayscale.jpg)
 
 As a last step, I normalized the image data because ...
+
+![speed limit 50 (km/h)](examples/turn_right_head_grayscale_CLAHE.jpg)
 
 #### Final Model Achitecture
 
@@ -116,6 +118,22 @@ My final model results were:
 * training set accuracy of 0.996
 * validation set accuracy of 0.973
 * test set accuracy of 0.951
+
+mit Histogrammeinebnung:
+Training Accuracy = 0.998
+Validation Accuracy = 0.980
+Test Accuracy = 0.953
+
+cv2.createCLAHE(clipLimit = 2.0, tileGridSize = (8, 8)):
+Training Accuracy = 0.998
+Validation Accuracy = 0.975
+Test Accuracy = 0.958
+
+cv2.createCLAHE(clipLimit = 40.0, tileGridSize = (4, 4)):
+Training Accuracy = 0.999
+Validation Accuracy = 0.983
+Test Accuracy = 0.964
+
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
