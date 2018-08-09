@@ -5,5 +5,5 @@ models
 *.swp
 *.p
 papers/
-saved_model/
+saved_models
 traffic-signs-data.zip
