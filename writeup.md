@@ -56,32 +56,29 @@ As a last step, the image is normalized because it centers the mean at 0, which 
 
 #### Final Model Achitecture
 
-TODO:
-- Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
-My final model consisted of the following layers:
+The final model is a convolutional neural network consisting of the following layers:
 
 |      Layer      |                 Description                 |
 |:---------------:|:-------------------------------------------:|
 |      Input      |           32x32x1 grayscale image           |
-| Convolution 5x5 | 1x1 stride, valid padding, outputs 28x28x64 |
+| Convolution 5x5 | 1x1 stride, valid padding, outputs 28x28x16 |
 |      RELU       |                                             |
 | Max pooling	2x2 |        2x2 stride,  outputs 14x14x16        |
 | Convolution 5x5 | 1x1 stride, valid padding, outputs 10x10x32 |
 |      RELU       |                                             |
 | Max pooling	2x2 |         2x2 stride,  outputs 5x5x32         |
 |     Flatten     |  Input = 5x5x32. Output = 5 * 5 * 32 = 800  |
-| Fully connected |          Input = 800. Output = 120          |
+| Fully connected |          Input = 800, Output = 120          |
 |      RELU       |                                             |
 |     Dropout     |                                             |
-| Fully connected |          Input = 120. Output = 84           |
+| Fully connected |          Input = 120, Output = 84           |
 |      RELU       |                                             |
 |     Dropout     |                                             |
-| Fully connected |           Input = 84. Output = 10           |
+| Fully connected |           Input = 84, Output = 10           |
 |     Softmax     |                                             |
 |     Output      |                     10                      |
 
-
+This model is adapted from the LeNet-5 solution from the lecture. Differing from LeNet-5 it has deeper convolutional layers (depths of 16 and 32 instead of 6 and 16) and it has two dropout layers in order to prevent overfitting.
 
 #### Model Training
 
