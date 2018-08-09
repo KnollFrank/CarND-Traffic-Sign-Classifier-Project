@@ -75,15 +75,13 @@ The final model is a convolutional neural network consisting of the following la
 |     Flatten     |  Input = 5x5x32. Output = 5 * 5 * 32 = 800  |
 | Fully connected |          Input = 800, Output = 120          |
 |      RELU       |                                             |
-|     Dropout     |                                             |
 | Fully connected |          Input = 120, Output = 84           |
 |      RELU       |                                             |
-|     Dropout     |                                             |
 | Fully connected |           Input = 84, Output = 10           |
 |     Softmax     |                                             |
 |     Output      |                     10                      |
 
-This model is adapted from the LeNet-5 solution from the lecture. Differing from LeNet-5 it has deeper convolutional layers (depths of 16 and 32 instead of 6 and 16) and it has two dropout layers in order to prevent overfitting.
+This model is adapted from the LeNet-5 solution from the lecture. Differing from LeNet-5 it has deeper convolutional layers (depths of 16 and 32 instead of 6 and 16).
 
 ### Model Training
 
@@ -93,46 +91,49 @@ The model was trained using an AdamOptimizer, a batch size of 128, number of epo
 
 TODO:
 - Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-- vielleicht as bar chart oder radar chart darstellen (https://seaborn.pydata.org/generated/seaborn.barplot.html)
+- The submission describes the approach to finding a solution. Accuracy on the validation set is 0.93 or greater.
+
+model = create_model(depth_conv2d_1 = 6, depth_conv2d_2 = 16, dropout = False, save_folder = 'model_6_16_False_RGB_without_Normalize'):
+- Training Accuracy = 0.993
+- Validation Accuracy = 0.905
+
+model = create_model(depth_conv2d_1 = 6, depth_conv2d_2 = 16, dropout = False, save_folder = 'model_6_16_False_RGB') with normalize:
+- Training Accuracy = 0.997
+- Validation Accuracy = 0.936
 
 model_6_16_False_no_clahe:
 - Training Accuracy = 0.993
 - Validation Accuracy = 0.935
-- Test Accuracy = 0.910
 
 model_6_16_False:
 - Training Accuracy = 0.998
 - Validation Accuracy = 0.954
-- Test Accuracy = 0.928
 
 model_6_16_True:
 - Training Accuracy = 0.996
 - Validation Accuracy = 0.969
-- Test Accuracy = 0.946
 
+model_16_32_False:
+- Training Accuracy = 0.999
+- Validation Accuracy = 0.975
+
+model_16_32_True:
+- Training Accuracy = 0.999
+- Validation Accuracy = 0.974
+
+My final model results were:
 model_16_32_False:
 - Training Accuracy = 0.999
 - Validation Accuracy = 0.975
 - Test Accuracy = 0.949
 
-My final model results were:
-model_16_32_True:
-- Training Accuracy = 0.999
-- Validation Accuracy = 0.974
-- Test Accuracy = 0.961
-
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+  * LeNet-5
 * What were some problems with the initial architecture?
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-
 
 ## Test a Model on New Images
 
