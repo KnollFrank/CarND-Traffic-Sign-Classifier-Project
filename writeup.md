@@ -1,6 +1,5 @@
 # **Traffic Sign Recognition**
 
-## Writeup
 
 **Build a Traffic Sign Recognition Project**
 
@@ -14,9 +13,9 @@ The goals / steps of this project are the following:
 
 Here is a link to my [project code](https://github.com/KnollFrank/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
-### Data Set Summary & Exploration
+## Data Set Summary & Exploration
 
-#### Summary
+### Summary
 
 I used the numpy library to calculate summary statistics of the traffic signs data set:
 
@@ -26,7 +25,7 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-#### Exploration
+### Exploration
 
 Here is an exploratory visualization of the data set. It is a kernel density estimate of the traffic sign classes of the training data (y_train), the validation data (y_valid) and the test data (y_test):
 
@@ -34,27 +33,33 @@ Here is an exploratory visualization of the data set. It is a kernel density est
 
 The visualization above shows that the data sets have nearly the same distribution as the curves are quite similar.
 
-### Design and Test a Model Architecture
+## Design and Test a Model Architecture
 
-#### Preprocessing
+### Preprocessing
+
+#### Grayscaling
 
 As a first step, the images are converted to grayscale because color has no semantic meaning in traffic signs and it reduces the size of the data (one grey value per pixel instead of three values for red, green and blue).
 
 Here is an example of a traffic sign image before grayscaling:
 
-![speed limit 50 (km/h)](examples/turn_right_head.jpg =100x)
+![speed limit 50 (km/h)](examples/turn_right_head.jpg)
 
 and after grayscaling:
 
-![speed limit 50 (km/h)](examples/turn_right_head_grayscale.jpg =100x)
+![speed limit 50 (km/h)](examples/turn_right_head_grayscale.jpg)
+
+#### Contrast Limited Adaptive Histogram Equalization
 
 Then [CLAHE](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization#Contrast_Limited_AHE) (Contrast Limited Adaptive Histogram Equalization) is applied in order to improve the contrast in the image:
 
-![speed limit 50 (km/h)](examples/turn_right_head_grayscale_CLAHE.jpg =100x)
+![speed limit 50 (km/h)](examples/turn_right_head_grayscale_CLAHE.jpg)
+
+#### Normalizing
 
 As a last step, the image is normalized because it centers the mean at 0, which helps to avoid exploding or disappearing gradients when performing backpropagation while training the network.
 
-#### Final Model Achitecture
+### Final Model Achitecture
 
 The final model is a convolutional neural network consisting of the following layers:
 
@@ -80,7 +85,7 @@ The final model is a convolutional neural network consisting of the following la
 
 This model is adapted from the LeNet-5 solution from the lecture. Differing from LeNet-5 it has deeper convolutional layers (depths of 16 and 32 instead of 6 and 16) and it has two dropout layers in order to prevent overfitting.
 
-#### Model Training
+### Model Training
 
 TODO:
 - Describe how you trained your model. The discussion can include
@@ -94,7 +99,7 @@ TODO:
 
 To train the model, I used an AdamOptimizer, a batch size of 128, number of epochs of 20, a learning rate of 0.001, `keep_prob` of 0.5 for each of the two dropout layers (`tf.nn.dropout`) of the model. While training the exact model is saved which best performs on the validation dataset (see `train()` function).
 
-#### Finding a Solution Step by Step
+### Finding a Solution Step by Step
 
 TODO:
 - Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
@@ -139,9 +144,9 @@ If a well known architecture was chosen:
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
 
-### Test a Model on New Images
+## Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
@@ -153,7 +158,7 @@ Here are five German traffic signs that I found on the web:
 
 The first image might be difficult to classify because ...
 
-#### Predicting the Sign Type for Each Image
+### Predicting the Sign Type for Each Image
 
 TODO:
 - Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
@@ -170,7 +175,7 @@ Children crossing|Road work
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
-#### Output Top 5 Softmax Probabilities For Each Image Found on the Web
+### Output Top 5 Softmax Probabilities For Each Image Found on the Web
 
 TODO:
 - Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
