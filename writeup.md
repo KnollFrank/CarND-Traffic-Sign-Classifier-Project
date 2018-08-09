@@ -119,12 +119,12 @@ My final model results were:
 * validation set accuracy of 0.973
 * test set accuracy of 0.951
 
-mit Histogrammeinebnung:
+mit Histogrammeinebnung normalize(cv2.equalizeHist(grayscale_image(image)).reshape((image.shape[0], image.shape[1], 1))):
 Training Accuracy = 0.998
 Validation Accuracy = 0.980
 Test Accuracy = 0.953
 
-cv2.createCLAHE(clipLimit = 2.0, tileGridSize = (8, 8)):
+cv2.createCLAHE(clipLimit = 2.0, tileGridSize = (8, 8)) (see https://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html):
 Training Accuracy = 0.998
 Validation Accuracy = 0.975
 Test Accuracy = 0.958
