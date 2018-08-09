@@ -18,9 +18,6 @@ Here is a link to my [project code](https://github.com/KnollFrank/CarND-Traffic-
 
 #### Summary
 
-TODO:
-- Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
 I used the numpy library to calculate summary statistics of the traffic signs data set:
 
 * The size of the training set is 34799
@@ -30,9 +27,6 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 * The number of unique classes/labels in the data set is 43
 
 #### Exploration
-
-TODO:
-- Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a kernel density estimate of the traffic sign classes of the training data (y_train), the validation data (y_valid) and the test data (y_test):
 
