@@ -128,10 +128,10 @@ model_16_32_True_EPOCHS_100:
 - Test Accuracy = 0.959
 
 My final model results were:
-model_16_32_True:
-- Training Accuracy = 0.999
-- Validation Accuracy = 0.978
-- Test Accuracy = 0.958
+model_16_32_True_EPOCHS_100:
+- Training Accuracy = 0.998
+- Validation Accuracy = 0.984
+- Test Accuracy = 0.959
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
