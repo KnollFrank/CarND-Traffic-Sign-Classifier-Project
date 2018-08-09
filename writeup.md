@@ -116,9 +116,9 @@ TODO:
 - vielleicht as bar chart oder radar chart darstellen (https://seaborn.pydata.org/generated/seaborn.barplot.html)
 
 model_6_16_False_no_clahe:
-Training Accuracy = 0.993
-Validation Accuracy = 0.935
-Test Accuracy = 0.910
+- Training Accuracy = 0.993
+- Validation Accuracy = 0.935
+- Test Accuracy = 0.910
 
 model_6_16_False:
 - Training Accuracy = 0.998
