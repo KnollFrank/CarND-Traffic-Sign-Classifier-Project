@@ -87,17 +87,7 @@ This model is adapted from the LeNet-5 solution from the lecture. Differing from
 
 ### Model Training
 
-TODO:
-- Describe how you trained your model. The discussion can include
-  - (+) the type of optimizer,
-  - (+) the batch size,
-  - (+) number of epochs
-  - and any hyperparameters such as
-    - (+) learning rate,
-    - (+) keep_prob
-- cross_entropy
-
-To train the model, I used an AdamOptimizer, a batch size of 128, number of epochs of 20, a learning rate of 0.001, `keep_prob` of 0.5 for each of the two dropout layers (`tf.nn.dropout`) of the model. While training the exact model is saved which best performs on the validation dataset (see `train()` function).
+The model was trained using an AdamOptimizer, a batch size of 128, number of epochs of 20, a learning rate of 0.001 and a `keep_prob` of 0.5 for each of the two `tf.nn.dropout` layers of the model. While training, the exact model is saved which best performs on the validation dataset (see `train()` function).
 
 ### Finding a Solution Step by Step
 
