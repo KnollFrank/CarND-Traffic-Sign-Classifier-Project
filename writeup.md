@@ -75,72 +75,33 @@ The final model is a convolutional neural network consisting of the following la
 |     Flatten     |  Input = 5x5x32. Output = 5 * 5 * 32 = 800  |
 | Fully connected |          Input = 800, Output = 120          |
 |      RELU       |                                             |
+|     Dropout     |                                             |
 | Fully connected |          Input = 120, Output = 84           |
 |      RELU       |                                             |
+|     Dropout     |                                             |
 | Fully connected |           Input = 84, Output = 10           |
 |     Softmax     |                                             |
 |     Output      |                     10                      |
 
-This model is adapted from the LeNet-5 solution from the lecture. Differing from LeNet-5 it has deeper convolutional layers (depths of 16 and 32 instead of 6 and 16).
+This model is adapted from the LeNet-5 solution from the lecture. Differing from LeNet-5 it has deeper convolutional layers (depths of 16 and 32 instead of 6 and 16) and it has two dropout layers in order to prevent overfitting.
 
 ### Model Training
 
-The model was trained using an AdamOptimizer, a batch size of 128, number of epochs of 20, a learning rate of 0.001 and a `keep_prob` of 0.5 for each of the two `tf.nn.dropout` layers of the model. While training, the exact model is saved which best performs on the validation dataset (see `train()` function).
+The model was trained using an AdamOptimizer, a batch size of 128, number of epochs of 100, a learning rate of 0.001 and a `keep_prob` of 0.5 for each of the two `tf.nn.dropout` layers of the model. While training, the exact model is saved which best performs on the validation dataset (see `train()` function).
 
 ### Finding a Solution Step by Step
 
-TODO:
-- Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-- The submission describes the approach to finding a solution. Accuracy on the validation set is 0.93 or greater.
+The initial model was the LeNet-5 solution from the lecture applied to RGB traffic sign images without any preprocessing. It achieved a training accuracy of 0.993 and a validation accuracy of 0.905 which is below the target of 0.93.
 
-model = create_model(depth_conv2d_1 = 6, depth_conv2d_2 = 16, dropout = False, save_folder = 'model_6_16_False_RGB_without_Normalize'):
-- Training Accuracy = 0.993
-- Validation Accuracy = 0.905
+Then the RGB images were converted to grayscale (in order to reduce the size of the images) and normalized (in order to prevent exploding or disappearing gradients when performing backpropagation while training the network) as preprocessing steps. This resulted in a training  accuracy of 0.993 and improved the validation accuracy a little bit from 0.93 to 0.935.
 
-model = create_model(depth_conv2d_1 = 6, depth_conv2d_2 = 16, dropout = False, save_folder = 'model_6_16_False_RGB') with normalize:
-- Training Accuracy = 0.997
-- Validation Accuracy = 0.936
+Then Contrast Limited Adaptive Histogram Equalization was applied to the grayscaled images as a further preprocessing step in order to improve the contrast in the images. This resulted in a training accuracy of 0.998 and improved the validation accuracy from 0.935 to 0.954.
 
-model_6_16_False_no_clahe:
-- Training Accuracy = 0.993
-- Validation Accuracy = 0.935
+Then two dropout layers were added to the model as can be seen in the table of the section "Final Model Achitecture" in order to prevent overfitting. This resulted in a training accuracy of 0.996 and improved the validation accuracy from 0.954 to 0.969.
 
-model_6_16_False:
-- Training Accuracy = 0.998
-- Validation Accuracy = 0.954
+Then the two convolutional layers of the model were enhanced to have depths of 16 and 32 instead of the former depths of 6 and 16 of the initial LeNet-5 model. The hope was that more convolutional filters can recognize more features (like arrows, rounded corners, ...) of traffic signs in images in order to classify them correctly. This resulted in a training accuracy of 0.999 and improved the validation accuracy from 0.969 to 0.978.
 
-model_6_16_True:
-- Training Accuracy = 0.996
-- Validation Accuracy = 0.969
-
-model_16_32_False:
-- Training Accuracy = 0.999
-- Validation Accuracy = 0.975
-
-model_16_32_True:
-- Training Accuracy = 0.999
-- Validation Accuracy = 0.978
-- Test Accuracy = 0.958
-
-model_16_32_True_EPOCHS_100:
-- Training Accuracy = 0.998
-- Validation Accuracy = 0.984
-- Test Accuracy = 0.959
-
-My final model results were:
-model_16_32_True_EPOCHS_100:
-- Training Accuracy = 0.998
-- Validation Accuracy = 0.984
-- Test Accuracy = 0.959
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-  * LeNet-5
-* What were some problems with the initial architecture?
-  * high training accuracy but low validation accuracy => overfitting
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+Finally, the actual model was trained for 100 epochs instead of just 20. This resulted in a training accuracy of 0.998 and improved the validation accuracy from 0.978 to 0.984 which is above the target of 0.93. This model was taken as the final model yielding a test set accuracy of 0.959.
 
 ## Test a Model on New Images
 
