@@ -126,9 +126,9 @@ Here are the results of the prediction:
 
 Image|Prediction
 :---:|:---:
-Speed limit (30km/h)|Pedestrians
+Speed limit (30km/h)|Speed limit (30km/h)
 Stop|Stop
-No vehicles|End of no passing
+No vehicles|No passing
 No entry|Turn left ahead
 Children crossing|Road work
 
@@ -147,50 +147,50 @@ samples/classId_01.jpg (Speed limit (30km/h)):
 
 Probability|Prediction
 :---:|:---:
-56%|Pedestrians
-29%|Road narrows on the right
-10%|Speed limit (30km/h)
-4%|Double curve
-1%|Right-of-way at the next intersection
+98%|Speed limit (30km/h)
+2%|Speed limit (50km/h)
+0%|End of speed limit (80km/h)
+0%|Speed limit (20km/h)
+0%|Keep left
 
 samples/classId_14.jpg (Stop):
 
 Probability|Prediction
 :---:|:---:
-100%|Stop
-0%|Turn left ahead
-0%|Keep right
-0%|No entry
-0%|Turn right ahead
+89%|Stop
+8%|No vehicles
+2%|Turn left ahead
+1%|No entry
+0%|Yield
 
 samples/classId_15.jpg (No vehicles):
 
 Probability|Prediction
 :---:|:---:
-99%|End of no passing
-0%|No passing
+77%|No passing
+14%|End of no passing
+8%|Priority road
+1%|Keep right
 0%|Yield
-0%|Priority road
-0%|End of no passing by vehicles over 3.5 metric tons
 
 samples/classId_17.jpg (No entry):
 
 Probability|Prediction
 :---:|:---:
-100%|Turn left ahead
-0%|Keep right
+88%|Turn left ahead
+12%|Keep right
 0%|No entry
-0%|Go straight or right
-0%|Dangerous curve to the right
+0%|End of no passing
+0%|Speed limit (50km/h)
 
 samples/classId_28.jpg (Children crossing):
 
 Probability|Prediction
 :---:|:---:
-87%|Road work
-12%|Turn right ahead
-1%|Ahead only
-0%|Stop
-0%|Beware of ice/snow
+76%|Road work
+19%|Right-of-way at the next intersection
+1%|Pedestrians
+1%|Children crossing
+1%|Go straight or right
 
 For the second image ...
