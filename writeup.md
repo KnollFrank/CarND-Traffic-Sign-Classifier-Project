@@ -89,7 +89,7 @@ This model is adapted from the LeNet-5 solution from the lecture. Differing from
 
 The model was trained using an AdamOptimizer, a batch size of 128, number of epochs of 100, a learning rate of 0.001 and a `keep_prob` of 0.5 for each of the two `tf.nn.dropout` layers of the model. While training, the exact model is saved which best performs on the validation dataset (see `train()` function).
 
-### Finding a Solution Step by Step
+### Solution Approach
 
 The initial model was the LeNet-5 solution from the lecture applied to RGB traffic sign images without any preprocessing. It achieved a training accuracy of 0.993 and a validation accuracy of 0.905 which is below the target of 0.93. These accuracies are calculated in the function `evaluate_accuracy(model, X, y)` of the notebook.
 
@@ -103,7 +103,9 @@ Then the two convolutional layers of the model were enhanced to have depths of 1
 
 Finally, the actual model was trained for 100 epochs instead of just 20. This resulted in a training accuracy of 0.998 and improved the validation accuracy from 0.978 to 0.984 which is above the target of 0.93. This model was taken as the final model yielding a test set accuracy of 0.959.
 
-## Test a Model on New Images
+## Test the Model on New Images
+
+### Acquiring New Images
 
 Here are five German traffic signs that I found on the web:
 
@@ -115,11 +117,7 @@ No vehicles          | ![No vehicles](samples/classId_15.jpg)          | This im
 No entry             | ![No entry](samples/classId_17.jpg)             | This image might be difficult to classify because the traffic sign is relatively small compared to the size of the background.
 Children crossing    | ![Children crossing](samples/classId_28.jpg)    | This image might be difficult to classify because it is perspectively distorted.
 
-
-### Predicting the Sign Type for Each Image
-
-TODO:
-- Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+### Performance on New Images
 
 Here are the results of the prediction:
 
@@ -131,7 +129,7 @@ No vehicles|No passing
 No entry|Turn left ahead
 Children crossing|Road work
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. The accuracy on the test set is 96% as reported in the section "Solution Approach" which is much higher.
 
 ### Top 5 Softmax Probabilities For Each Image Found on the Web
 
