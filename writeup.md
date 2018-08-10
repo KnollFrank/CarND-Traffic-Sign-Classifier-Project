@@ -131,63 +131,56 @@ Children crossing|Road work
 
 The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. The accuracy on the test set is 96% as reported in the section "Solution Approach" which is much higher.
 
-### Top 5 Softmax Probabilities For Each Image Found on the Web
+### Model Certainty - Softmax Probabilities
 
-TODO:
-- Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The code for making predictions on the final model is in the function `get_top_5_predictions()` located in the Ipython notebook.
 
-The code for making predictions on my final model is in the function `get_top_5_predictions()` located in the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-samples/classId_01.jpg (Speed limit (30km/h)):
+For the first image, the model is almost certain that this is a Speed limit (30km/h) sign (probability of 97.9%), and the image does indeed contain a Speed limit (30km/h) sign. The top five soft max probabilities are:
 
 Probability|Prediction
 :---:|:---:
-98%|Speed limit (30km/h)
-2%|Speed limit (50km/h)
-0%|End of speed limit (80km/h)
-0%|Speed limit (20km/h)
-0%|Keep left
+97.9%|Speed limit (30km/h)
+1.6%|Speed limit (50km/h)
+0.3%|End of speed limit (80km/h)
+0.1%|Speed limit (20km/h)
+0.0%|Keep left
 
-samples/classId_14.jpg (Stop):
-
-Probability|Prediction
-:---:|:---:
-89%|Stop
-8%|No vehicles
-2%|Turn left ahead
-1%|No entry
-0%|Yield
-
-samples/classId_15.jpg (No vehicles):
+For the second image, the model is relatively sure that this is a stop sign (probability of 89.3%), and the image does indeed contain a stop sign. The top five soft max probabilities are:
 
 Probability|Prediction
 :---:|:---:
-77%|No passing
-14%|End of no passing
-8%|Priority road
-1%|Keep right
-0%|Yield
+89.3%|Stop
+7.7%|No vehicles
+1.8%|Turn left ahead
+0.7%|No entry
+0.4%|Yield
 
-samples/classId_17.jpg (No entry):
-
-Probability|Prediction
-:---:|:---:
-88%|Turn left ahead
-12%|Keep right
-0%|No entry
-0%|End of no passing
-0%|Speed limit (50km/h)
-
-samples/classId_28.jpg (Children crossing):
+For the third image, the model is relatively sure that this is a No passing sign (probability of 77.4%), but the image contains a No vehicles sign, which the model does not even mention in it's top five soft max probabilities:
 
 Probability|Prediction
 :---:|:---:
-76%|Road work
-19%|Right-of-way at the next intersection
-1%|Pedestrians
-1%|Children crossing
-1%|Go straight or right
+77.4%|No passing
+14.1%|End of no passing
+7.8%|Priority road
+0.6%|Keep right
+0.1%|Yield
 
-For the second image ...
+For the fourth image, the model is relatively sure that this is a Turn left ahead sign (probability of 88.1%), but the image contains a No entry sign, which the model does classify to have a low probability of 0.2%. The top five soft max probabilities are:
+
+Probability|Prediction
+:---:|:---:
+88.1%|Turn left ahead
+11.6%|Keep right
+0.2%|No entry
+0.0%|End of no passing
+0.0%|Speed limit (50km/h)
+
+For the fifth image, the model is relatively sure that this is a Road work sign (probability of 76.1%), but the image contains a quite similar Children crossing sign, which the model does classify to have a low probability of 0.9%. The top five soft max probabilities are:
+
+Probability|Prediction
+:---:|:---:
+76.1%|Road work
+18.7%|Right-of-way at the next intersection
+0.9%|Pedestrians
+0.9%|Children crossing
+0.8%|Go straight or right
