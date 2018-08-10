@@ -91,7 +91,7 @@ The model was trained using an AdamOptimizer, a batch size of 128, number of epo
 
 ### Finding a Solution Step by Step
 
-The initial model was the LeNet-5 solution from the lecture applied to RGB traffic sign images without any preprocessing. It achieved a training accuracy of 0.993 and a validation accuracy of 0.905 which is below the target of 0.93.
+The initial model was the LeNet-5 solution from the lecture applied to RGB traffic sign images without any preprocessing. It achieved a training accuracy of 0.993 and a validation accuracy of 0.905 which is below the target of 0.93. These accuracies are calculated in the function `evaluate_accuracy(model, X, y)` of the notebook.
 
 Then the RGB images were converted to grayscale (in order to reduce the size of the images) and normalized (in order to prevent exploding or disappearing gradients when performing backpropagation while training the network) as preprocessing steps. This resulted in a training  accuracy of 0.993 and improved the validation accuracy a little bit from 0.93 to 0.935.
 
@@ -105,17 +105,16 @@ Finally, the actual model was trained for 100 epochs instead of just 20. This re
 
 ## Test a Model on New Images
 
-### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
-
 Here are five German traffic signs that I found on the web:
 
-![Speed limit (30km/h)](samples/classId_01.jpg =x200)
-![Stop](samples/classId_14.jpg =x200)
-![No vehicles](samples/classId_15.jpg =x200)
-![No entry](samples/classId_17.jpg =x200)
-![Children crossing](samples/classId_28.jpg =x200)
+Class                | Image                                           | Description
+---------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------
+Speed limit (30km/h) | ![Speed limit (30km/h)](samples/classId_01.jpg) | This image might be difficult to classify because it has "km" next to "30" in contrast to the training images which have no "km".
+Stop                 | ![Stop](samples/classId_14.jpg)                 | This image has a background showing branches of trees which could confuse the classifier.
+No vehicles          | ![No vehicles](samples/classId_15.jpg)          | This image might be difficult to classify because it is perspectively distorted.
+No entry             | ![No entry](samples/classId_17.jpg)             | This image might be difficult to classify because the traffic sign is relatively small compared to the size of the background.
+Children crossing    | ![Children crossing](samples/classId_28.jpg)    | This image might be difficult to classify because it is perspectively distorted.
 
-The first image might be difficult to classify because ...
 
 ### Predicting the Sign Type for Each Image
 
@@ -134,7 +133,7 @@ Children crossing|Road work
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
-### Output Top 5 Softmax Probabilities For Each Image Found on the Web
+### Top 5 Softmax Probabilities For Each Image Found on the Web
 
 TODO:
 - Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
