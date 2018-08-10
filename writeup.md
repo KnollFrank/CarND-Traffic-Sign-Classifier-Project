@@ -39,7 +39,7 @@ The visualization above shows that the data sets have nearly the same distributi
 
 #### Grayscaling
 
-As a first step, the images are converted to grayscale because color has no semantic meaning in traffic signs and it reduces the size of the data (one grey value per pixel instead of three values for red, green and blue).
+As a first step, the images are converted to grayscale because color has no semantic meaning in traffic signs and it reduces the size of the data (only one grey value per pixel instead of three values for red, green and blue).
 
 Here is an example of a traffic sign image before grayscaling:
 
@@ -87,7 +87,7 @@ This model is adapted from the LeNet-5 solution from the lecture. Differing from
 
 ### Model Training
 
-The model was trained using an AdamOptimizer, a batch size of 128, number of epochs of 100, a learning rate of 0.001 and a `keep_prob` of 0.5 for each of the two `tf.nn.dropout` layers of the model. While training, the exact model is saved which best performs on the validation dataset (see `train()` function).
+The model was trained using an AdamOptimizer, a batch size of 128, number of epochs of 100, a learning rate of 0.001 and a `keep_prob` of 0.5 for each of the two `tf.nn.dropout` layers of the model. While training, the exact model is saved which best performs on the validation dataset (see `train()` function in the notebook).
 
 ### Solution Approach
 
@@ -129,7 +129,7 @@ No vehicles|No passing
 No entry|Turn left ahead
 Children crossing|Road work
 
-The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. The accuracy on the test set is 96% as reported in the section "Solution Approach" which is much higher.
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. The accuracy on the test set is about 96% as reported in the section "Solution Approach" which is much higher.
 
 ### Model Certainty - Softmax Probabilities
 
